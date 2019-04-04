@@ -64,3 +64,6 @@ class WebApiServiceGroup(WebApiBase):
 
         for group in self.get_all_servicegroups():
             self.delete_servicegroup(group)
+
+    def get_all_services(self):
+        return self.make_view_name_request('allservices')
