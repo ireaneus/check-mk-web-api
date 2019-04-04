@@ -9,8 +9,10 @@ pytest = "*"
 ipython = "*"
 pytest-watch = "*"
 pytest-vcr = "*"
+requests = "*"
 
 [packages]
+requests = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.5"
