@@ -14,7 +14,7 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestHostGroup():
     def setup(self):
         api.delete_all_hostgroups()

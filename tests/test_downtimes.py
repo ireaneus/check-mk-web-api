@@ -14,7 +14,7 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestDowntimes():
 
     @my_workingvcr
