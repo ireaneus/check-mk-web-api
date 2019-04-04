@@ -12,7 +12,7 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestHosttags():
 
     @my_workingvcr

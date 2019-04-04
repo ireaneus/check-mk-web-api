@@ -16,7 +16,7 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestFolders():
     def setup(self):
         for folder in api.get_all_folders():
