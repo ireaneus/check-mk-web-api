@@ -14,7 +14,7 @@ api = WebApi(
 
 
 class TestServiceGroup():
-    # @my_workingvcr
+
     def setup(self):
         api.delete_all_servicegroups()
 
@@ -23,6 +23,7 @@ class TestServiceGroup():
         api.add_servicegroup('db', 'Database')
         assert api.get_servicegroup('db')
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_get_all_servicegroups(self):
         api.add_servicegroup('db', 'Database')
@@ -31,22 +32,26 @@ class TestServiceGroup():
         assert 'db' in groups
         assert 'web' in groups
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_get_nonexistent_servicegroup(self):
         with pytest.raises(KeyError):
             api.get_servicegroup('db')
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_add_servicegroup(self):
         api.add_servicegroup('db', 'Database')
         assert api.get_servicegroup('db')['alias'] == 'Database'
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_add_duplicate_servicegroup(self):
         with pytest.raises(CheckMkWebApiException):
             api.add_servicegroup('db', 'Database')
             api.add_servicegroup('db', 'Database')
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_edit_servicegroup(self):
         api.add_servicegroup('db', 'Database')
@@ -54,11 +59,13 @@ class TestServiceGroup():
         api.edit_servicegroup('db', 'Databases')
         assert api.get_servicegroup('db')['alias'] == 'Databases'
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_edit_nonexisting_servicegroup(self):
         with pytest.raises(CheckMkWebApiException):
             api.edit_servicegroup('db', 'Database')
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_delete_servicegroup(self):
         api.add_servicegroup('db', 'Database')
@@ -66,11 +73,13 @@ class TestServiceGroup():
         api.delete_servicegroup('db')
         assert 'db' not in api.get_all_servicegroups()
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_delete_nonexistent_servicegroup(self):
         with pytest.raises(CheckMkWebApiException):
             api.delete_servicegroup('db')
 
+    @pytest.mark.skip()
     @my_workingvcr
     def test_all_services(self):
         expected_result = [['service_state',
